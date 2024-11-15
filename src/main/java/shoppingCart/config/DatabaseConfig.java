@@ -14,7 +14,7 @@ public class DatabaseConfig {
 
     @Bean
     public ConnectionFactory connectionFactory() {
-        return ConnectionFactories.get("r2dbc:postgresql://postgres@localhost:5500/shopping_cart?schema=schema_shopping_cart");
+        return ConnectionFactories.get("r2dbc:postgresql://root:root@localhost:5500/shopping_cart?schema=schema_shopping_cart");
     }
     @Bean
     public CommandLineRunner testConnection(ConnectionFactory connectionFactory) {
