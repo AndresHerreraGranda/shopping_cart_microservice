@@ -1,0 +1,25 @@
+services:
+  database:
+    image: postgres
+    restart: always
+    container_name: "postgres"
+    ports:
+      - "5500:5500"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DATABASE: shopping_cart
+    volumes:
+      - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: -p 5500
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: "pgamin"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "80:80"
+    depends_on:
+      - database
