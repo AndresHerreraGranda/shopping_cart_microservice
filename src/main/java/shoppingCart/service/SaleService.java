@@ -20,7 +20,6 @@ public class SaleService {
     private final SaleRepository saleRepository;
     private final CartRepository cartRepository;
     private final CustomerRepository customerRepository;
-    private final CartService cartService;
     private final ProductRepository productRepository;
     private final ProviderRepository providerRepository;
 
@@ -42,12 +41,10 @@ public class SaleService {
 
     public Flux<Sale> saveCartByCustomer(Long id){
         return cartRepository.findByIdCustomer(id)
-                .flatMap(cart -> {
-                    return Flux.just(Sale.builder()
-                            .idCart(cart.id())
-                            .createdAt(LocalDate.now())
-                            .build());
-                })
+                .flatMap(cart -> Flux.just(Sale.builder()
+                        .idCart(cart.id())
+                        .createdAt(LocalDate.now())
+                        .build()))
                 .flatMap(saleRepository::save);
     }
 
