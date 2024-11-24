@@ -50,6 +50,16 @@ CREATE TABLE IF NOT EXISTS schema_shopping_cart.carts
     REFERENCES schema_shopping_cart.customers (id) MATCH SIMPLE
     );
 
+CREATE TABLE IF NOT EXISTS schema_shopping_cart.sales
+(
+    id serial NOT NULL,
+    id_cart integer,
+    created_at date,
+    CONSTRAINT sales_pkey PRIMARY KEY (id),
+    CONSTRAINT id_cart FOREIGN KEY (id_cart)
+    REFERENCES schema_shopping_cart.carts (id) MATCH SIMPLE
+
+    );
 
 
 
