@@ -8,8 +8,6 @@ import shoppingCart.model.Cart;
 import shoppingCart.model.RetriveCart;
 import shoppingCart.repository.CartRepository;
 
-import java.util.List;
-
 @Service
 @AllArgsConstructor
 public class CartService {

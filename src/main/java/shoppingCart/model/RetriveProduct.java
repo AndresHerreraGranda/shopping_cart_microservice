@@ -1,9 +1,6 @@
 package shoppingCart.model;
 
 import lombok.Builder;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
 @Builder
 public record RetriveProduct(

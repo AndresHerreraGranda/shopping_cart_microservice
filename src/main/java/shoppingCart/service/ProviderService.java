@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import shoppingCart.model.Customer;
 import shoppingCart.model.Provider;
-import shoppingCart.repository.CustomerRepository;
 import shoppingCart.repository.ProviderRepository;
 
 @Service

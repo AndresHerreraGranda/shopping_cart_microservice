@@ -7,7 +7,6 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 import shoppingCart.model.Cart;
-import shoppingCart.model.Customer;
 import shoppingCart.service.CartService;
 
 @Component
