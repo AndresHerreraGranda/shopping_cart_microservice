@@ -4,9 +4,9 @@ import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("customers")
+@Table("providers")
 @Builder
-public record Customer(
+public record Provider(
         @Id
         Long id,
         String name,
